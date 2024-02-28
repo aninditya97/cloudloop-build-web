@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    Fore more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+  -->
+    <base href="/web/" />
+
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="description" content="A new Flutter project." />
+    <!-- Google Sign-In API 클라이언트 ID 설정 -->
+    <!-- web 853683776763-lrb9h4ci32gg3u0mf3tie7ims72j3l6m.apps.googleusercontent.com -->
+    <!-- web 853683776763-8g6s1ji6trv41ksi5o4i6vmcnunn4s7t -->
+    <meta name="google-signin-client_id" content="853683776763-fqmet2fq35i48hpdiv5pmu1u4s9ppnm0.apps.googleusercontent.com">
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Cloudloop" />
+    <link rel="apple-touch-icon" href="icons/Icon-192.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <title>CloudLoop</title>
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <!-- This script installs service_worker.js to provide PWA functionality to
+       application. For more information, see:
+       https://developers.google.com/web/fundamentals/primers/service-workers -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("flutter-first-frame", function () {
+          navigator.serviceWorker.register("flutter_service_worker.js");
+        });
+      }
+    </script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <!-- script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script -->
+    <!-- Add additional SDKs that you want to use -->
+    <!-- script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-analytics.js"></script -->
+    <!-- script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js"></scrip -->
+    <script type="module">
+      import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js';
+      import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-analytics.js';
+      import { getAuth, signInWithPopup, GoogleAuthProvider } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
+      // Your web app's Firebase configuration
+      // TODO ADD YOUR FIREBASE CONFIG
+      var firebaseConfig = {
+
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+    <script src="main.dart.js" type="application/javascript"></script>
+  </body>
+</html>
